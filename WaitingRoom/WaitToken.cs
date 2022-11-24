@@ -1,8 +1,7 @@
-using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 
-class WaitToken
+public class WaitToken
 {
 
     public const int SecretLength = 32;
@@ -35,7 +34,7 @@ class WaitToken
     public override String ToString()
     {
         String payload = _payload;
-        return _payload + "." + Sign(_payload).ToString();
+        return _payload + "." + Convert.ToBase64String(Sign(_payload));
     }
 
     public static WaitToken Parse(String tokenStr)
@@ -45,9 +44,9 @@ class WaitToken
         {
             throw new InvalidTokenException("Expected token to have 2 parts separated by '.'");
         }
-        byte[] signature = Encoding.Unicode.GetBytes(parts[1]);
+        byte[] signature = Convert.FromBase64String(parts[1]);
         byte[] expectedSignature = Sign(parts[0]);
-        if (signature != expectedSignature)
+        if (!signature.SequenceEqual(expectedSignature)) // TODO: Constant-time compare, if we really care about security
         {
             throw new InvalidTokenException("Invalid token signature");
         }
