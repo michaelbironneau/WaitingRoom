@@ -1,5 +1,7 @@
 # Waiting Room Prototype
 
+Disclaimer: I'm not a C# programmer and this is in part an excuse for me to learn the language beyond some Unity scripting. Please excuse any strange, non-idiomatic code. If it's bad enough to bother you, please open an issue!
+
 ## Problem
 
 Suppose that we want to manage access to a resource R that is capacity-constrained to support only S concurrent sessions. For example, suppose an event-booking website is only designed to support 100 concurrent sessions.
