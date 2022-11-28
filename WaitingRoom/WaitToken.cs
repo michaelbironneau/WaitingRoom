@@ -7,18 +7,28 @@ public class WaitToken
     public const int SecretLength = 32;
     private static readonly String Secret = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
 
+    public static int DefaultExpirySeconds = 300;
+
     public Int64 QueuePosition;
+    public DateTimeOffset Expiry;
 
     public WaitToken(Int64 queuePosition)
     {
         QueuePosition = queuePosition;
+        Expiry = DateTimeOffset.UtcNow.AddSeconds(DefaultExpirySeconds);
+    }
+
+    public WaitToken(Int64 queuePosition, DateTimeOffset expiry)
+    {
+        QueuePosition = queuePosition;
+        Expiry = expiry;
     }
 
     private String _payload
     {
         get
         {
-            return QueuePosition.ToString();
+            return QueuePosition.ToString() + "." + Expiry.ToUnixTimeSeconds().ToString();
         }
     }
 
@@ -39,20 +49,26 @@ public class WaitToken
 
     public static WaitToken Parse(String tokenStr)
     {
-        string[] parts = tokenStr.Split(".", 2);
-        if (parts.Length != 2)
+        string[] parts = tokenStr.Split(".", 3);
+        if (parts.Length != 3)
         {
-            throw new InvalidTokenException("Expected token to have 2 parts separated by '.'");
+            throw new InvalidTokenException("Expected token to have 3 parts separated by '.'");
         }
-        byte[] signature = Convert.FromBase64String(parts[1]);
-        byte[] expectedSignature = Sign(parts[0]);
+        byte[] signature = Convert.FromBase64String(parts[2]);
+        byte[] expectedSignature = Sign(parts[0] + "." + parts[1]);
         if (!signature.SequenceEqual(expectedSignature)) // TODO: Constant-time compare, if we really care about security
         {
             throw new InvalidTokenException("Invalid token signature");
         }
         try
         {
-            return new WaitToken(int.Parse(parts[0]));
+            long expiry = long.Parse(parts[1]);
+            DateTimeOffset exp = DateTimeOffset.FromUnixTimeSeconds(expiry);
+            if (exp <= DateTimeOffset.UtcNow)
+            {
+                throw new InvalidTokenException("Token expired");
+            }
+            return new WaitToken(int.Parse(parts[0]), DateTimeOffset.FromUnixTimeSeconds(expiry));
         }
         catch (FormatException)
         {
@@ -62,7 +78,7 @@ public class WaitToken
     }
 }
 
-class InvalidTokenException : Exception
+public class InvalidTokenException : Exception
 {
     public InvalidTokenException(string message)
         : base(message)
