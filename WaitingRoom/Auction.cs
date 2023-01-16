@@ -8,7 +8,7 @@ public class Auction
     private const int queueLockTimeoutMs = 1000;
     private const int queuePollMs = 100;
 
-    private SortedSet<int> _queue = new SortedSet<int>();
+    private SortedSet<long> _queue = new SortedSet<long>();
     private ReaderWriterLock _queueLock = new ReaderWriterLock();
 
     public Auction(int size)
@@ -49,7 +49,7 @@ public class Auction
 
 
 
-    private bool addToQueue(int queuePosition)
+    private bool addToQueue(long queuePosition)
     {
         try
         {
@@ -117,7 +117,7 @@ public class Auction
     ///<returns>
     /// True if the queuer is chosen, False otherwise. 
     ///</returns>
-    public bool Enter(int queuePosition)
+    public bool Enter(long queuePosition)
     {
         if (Status != AuctionStatus.Open)
         {
