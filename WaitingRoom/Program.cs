@@ -12,6 +12,10 @@ app.MapPost("/queue", ([FromBody] string tokenStr) =>
 {
     try
     {
+        if (tokenStr.Length == 0)
+        {
+            return AuctionManager.EnterNew();
+        }
         WaitToken token = WaitToken.Parse(tokenStr);
         return AuctionManager.EnterAt(token.QueuePosition);
     }
