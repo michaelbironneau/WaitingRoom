@@ -20,8 +20,8 @@ When a client makes a request to the waiting room, it checks whether capacity S 
 
 ```
 {
-    "access_token": "XXXXXXX",
-    "resource_uri": "https://resource-server.com/backend-resource"
+    "accessToken": "XXXXXXX",
+    "backendUri": "https://resource-server.com/backend-resource"
 }
 ```
 
@@ -37,8 +37,8 @@ The server also makes an estimate of the estimated wait time. This estimate is b
 
 ```
 {
-    "waiting_token": "a3sd23ff.1533.d545kd4ff83fls9",
-    "estimated_wait_seconds": 300
+    "queueToken": "a3sd23ff.1533.d545kd4ff83fls9",
+    "estimatedWaitSeconds": 300
 }
 ```
 
