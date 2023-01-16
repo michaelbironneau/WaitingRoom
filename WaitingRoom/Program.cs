@@ -6,7 +6,9 @@ var app = builder.Build();
 
 AuctionManager.Start();
 
+// TODO: Validate access token and redirect to /queue if invalid
 app.MapGet("/backend-resource", () => "You're through!");
+
 
 app.MapPost("/queue", ([FromBody] string tokenStr) =>
 {
