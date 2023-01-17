@@ -53,7 +53,6 @@ public sealed class AuctionManager
         {
             Access token = new Access();
             token.BackendUri = BackendUri;
-            token.AccessToken = "aaa-bbb-ccc"; // TODO: Implement this
             return token;
         }
         else

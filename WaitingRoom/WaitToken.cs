@@ -77,11 +77,3 @@ public class WaitToken
 
     }
 }
-
-public class InvalidTokenException : Exception
-{
-    public InvalidTokenException(string message)
-        : base(message)
-    {
-    }
-}
