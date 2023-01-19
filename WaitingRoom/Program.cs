@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-AuctionManager.Start();
+Task.Run(() => AuctionManager.Start());
+Console.WriteLine("Auction Manager Started!");
 
 app.MapGet("/backend-resource", ([FromHeader(Name = "X-Access-Token")] string token) =>
 {
@@ -46,4 +47,5 @@ app.MapGet("/queue", ([FromHeader(Name = "X-Queue-Token")] string tokenStr) =>
     }
 });
 
-app.Run();
+Console.WriteLine("Server listening on port 8080");
+app.Run("http://localhost:8080");

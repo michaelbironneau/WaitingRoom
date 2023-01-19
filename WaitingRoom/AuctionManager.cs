@@ -23,6 +23,7 @@ public sealed class AuctionManager
             if (instance == null)
             {
                 instance = new AuctionManager();
+                Console.WriteLine("Initialized Auction Manager");
             }
         }
     }
@@ -88,6 +89,7 @@ public sealed class AuctionManager
             {
                 // TODO: Do we need to do anything to clean up?
                 instance.auction = new Auction(AuctionSize);
+                instance.auction.Open();
             }
         }
 

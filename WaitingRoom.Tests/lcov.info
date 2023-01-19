@@ -1,62 +1,62 @@
 SF:c:\Dev\c#\WaitingRoom\WaitingRoom\Access.cs
 FN:12,System.String Access::get_AccessToken()
-FNDA:6,System.String Access::get_AccessToken()
-DA:13,6
+FNDA:0,System.String Access::get_AccessToken()
+DA:13,0
 FN:15,System.String Access::get_BackendUri()
-FNDA:2,System.String Access::get_BackendUri()
-DA:16,2
+FNDA:0,System.String Access::get_BackendUri()
+DA:16,0
 FN:24,System.Byte[] Access::Sign(System.String)
-FNDA:4,System.Byte[] Access::Sign(System.String)
-DA:25,4
-DA:26,4
-DA:27,4
-DA:28,4
-DA:30,4
+FNDA:0,System.Byte[] Access::Sign(System.String)
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:30,0
 FN:32,System.Void Access::Validate(System.String)
-FNDA:2,System.Void Access::Validate(System.String)
-DA:33,2
-DA:34,2
-DA:35,2
+FNDA:0,System.Void Access::Validate(System.String)
+DA:33,0
+DA:34,0
+DA:35,0
 DA:36,0
 DA:37,0
-DA:39,2
-DA:40,2
-DA:41,2
+DA:39,0
+DA:40,0
+DA:41,0
 DA:42,0
 DA:43,0
-DA:46,2
-DA:47,2
-DA:48,2
-DA:49,1
-DA:50,1
-DA:52,1
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:52,0
 DA:53,0
 DA:54,0
 DA:55,0
-DA:58,1
+DA:58,0
 BRDA:35,26,0,0
-BRDA:35,26,1,2
+BRDA:35,26,1,0
 BRDA:41,72,0,0
-BRDA:41,72,1,2
-BRDA:48,114,0,1
-BRDA:48,114,1,1
+BRDA:41,72,1,0
+BRDA:48,114,0,0
+BRDA:48,114,1,0
 FN:17,System.Void Access::.ctor()
-FNDA:2,System.Void Access::.ctor()
-DA:18,2
-DA:19,2
-DA:20,2
-DA:21,2
-DA:22,2
+FNDA:0,System.Void Access::.ctor()
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
 FN:7,System.Void Access::.cctor()
-FNDA:1,System.Void Access::.cctor()
-DA:8,1
-DA:10,1
+FNDA:0,System.Void Access::.cctor()
+DA:8,0
+DA:10,0
 LF:34
-LH:27
+LH:0
 BRF:6
-BRH:4
+BRH:0
 FNF:6
-FNH:6
+FNH:0
 end_of_record
 SF:c:\Dev\c#\WaitingRoom\WaitingRoom\Auction.cs
 FN:23,System.Void Auction::Open()
@@ -236,21 +236,21 @@ DA:53,0
 DA:54,0
 DA:55,0
 DA:56,0
-DA:57,0
+DA:59,0
 DA:60,0
-DA:61,0
-DA:63,0
+DA:62,0
 BRDA:47,11,0,0
 BRDA:47,11,1,0
 BRDA:52,41,0,0
 BRDA:52,41,1,0
-FN:65,System.Void AuctionManager::Start()
+FN:64,System.Void AuctionManager::Start()
 FNDA:0,System.Void AuctionManager::Start()
+DA:65,0
 DA:66,0
 DA:67,0
 DA:68,0
 DA:69,0
-DA:70,0
+DA:71,0
 DA:72,0
 DA:73,0
 DA:74,0
@@ -259,35 +259,34 @@ DA:76,0
 DA:77,0
 DA:78,0
 DA:79,0
-DA:80,0
+DA:81,0
 DA:82,0
 DA:83,0
-DA:84,0
+DA:86,0
 DA:87,0
 DA:88,0
-DA:89,0
+DA:90,0
 DA:91,0
 DA:92,0
-DA:93,0
-DA:95,0
-BRDA:67,11,0,0
-BRDA:67,11,1,0
-BRDA:78,82,0,0
-BRDA:78,82,1,0
-FN:97,System.Void AuctionManager::Stop()
+DA:94,0
+BRDA:66,11,0,0
+BRDA:66,11,1,0
+BRDA:77,82,0,0
+BRDA:77,82,1,0
+FN:96,System.Void AuctionManager::Stop()
 FNDA:0,System.Void AuctionManager::Stop()
+DA:97,0
 DA:98,0
 DA:99,0
 DA:100,0
-DA:101,0
+DA:103,0
 DA:104,0
 DA:105,0
 DA:106,0
 DA:107,0
 DA:108,0
-DA:109,0
-BRDA:99,11,0,0
-BRDA:99,11,1,0
+BRDA:98,11,0,0
+BRDA:98,11,1,0
 FN:14,System.Void AuctionManager::.ctor()
 FNDA:0,System.Void AuctionManager::.ctor()
 DA:15,0
@@ -303,7 +302,7 @@ DA:4,0
 DA:6,0
 DA:10,0
 DA:12,0
-LF:77
+LF:76
 LH:0
 BRF:14
 BRH:0
@@ -312,16 +311,16 @@ FNH:0
 end_of_record
 SF:c:\Dev\c#\WaitingRoom\WaitingRoom\InvalidTokenException.cs
 FN:3,System.Void InvalidTokenException::.ctor(System.String)
-FNDA:3,System.Void InvalidTokenException::.ctor(System.String)
-DA:4,3
-DA:5,3
-DA:6,3
+FNDA:0,System.Void InvalidTokenException::.ctor(System.String)
+DA:4,0
+DA:5,0
+DA:6,0
 LF:3
-LH:3
+LH:0
 BRF:0
 BRH:0
 FNF:1
-FNH:1
+FNH:0
 end_of_record
 SF:c:\Dev\c#\WaitingRoom\WaitingRoom\Program.cs
 FN:3,System.Void Program::<Main>$(System.String[])
@@ -329,6 +328,7 @@ FNDA:0,System.Void Program::<Main>$(System.String[])
 DA:4,0
 DA:5,0
 DA:7,0
+DA:9,0
 DA:10,0
 DA:11,0
 DA:12,0
@@ -341,13 +341,13 @@ DA:18,0
 DA:19,0
 DA:20,0
 DA:21,0
+DA:22,0
+DA:23,0
 DA:24,0
 DA:25,0
 DA:26,0
 DA:27,0
 DA:28,0
-DA:29,0
-DA:30,0
 DA:31,0
 DA:32,0
 DA:33,0
@@ -357,12 +357,20 @@ DA:36,0
 DA:37,0
 DA:38,0
 DA:39,0
+DA:40,0
 DA:41,0
-BRDA:12,12,0,0
-BRDA:12,12,1,0
-BRDA:28,13,0,0
-BRDA:28,13,1,0
-LF:32
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:49,0
+BRDA:11,12,0,0
+BRDA:11,12,1,0
+BRDA:35,13,0,0
+BRDA:35,13,1,0
+LF:41
 LH:0
 BRF:4
 BRH:0
@@ -385,74 +393,74 @@ FNH:0
 end_of_record
 SF:c:\Dev\c#\WaitingRoom\WaitingRoom\WaitToken.cs
 FN:29,System.String WaitToken::get__payload()
-FNDA:6,System.String WaitToken::get__payload()
-DA:30,6
-DA:31,6
-DA:32,6
+FNDA:0,System.String WaitToken::get__payload()
+DA:30,0
+DA:31,0
+DA:32,0
 FN:35,System.Byte[] WaitToken::Sign(System.String)
-FNDA:4,System.Byte[] WaitToken::Sign(System.String)
-DA:36,4
-DA:37,4
-DA:38,4
-DA:39,4
-DA:41,4
+FNDA:0,System.Byte[] WaitToken::Sign(System.String)
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:41,0
 FN:44,System.String WaitToken::ToString()
-FNDA:2,System.String WaitToken::ToString()
-DA:45,2
-DA:46,2
-DA:47,2
-DA:48,2
+FNDA:0,System.String WaitToken::ToString()
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
 FN:50,WaitToken WaitToken::Parse(System.String)
-FNDA:3,WaitToken WaitToken::Parse(System.String)
-DA:51,3
-DA:52,3
-DA:53,3
-DA:54,1
-DA:55,1
-DA:57,2
-DA:58,2
-DA:59,2
+FNDA:0,WaitToken WaitToken::Parse(System.String)
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:57,0
+DA:58,0
+DA:59,0
 DA:60,0
 DA:61,0
-DA:64,2
-DA:65,2
-DA:66,2
-DA:67,2
-DA:68,1
-DA:69,1
-DA:71,1
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:71,0
 DA:73,0
 DA:74,0
 DA:75,0
-DA:78,1
-BRDA:53,26,0,1
-BRDA:53,26,1,2
+DA:78,0
+BRDA:53,26,0,0
+BRDA:53,26,1,0
 BRDA:59,85,0,0
-BRDA:59,85,1,2
-BRDA:67,136,0,1
-BRDA:67,136,1,1
+BRDA:59,85,1,0
+BRDA:67,136,0,0
+BRDA:67,136,1,0
 FN:14,System.Void WaitToken::.ctor(System.Int64)
-FNDA:1,System.Void WaitToken::.ctor(System.Int64)
-DA:15,1
-DA:16,1
-DA:17,1
-DA:18,1
-DA:19,1
+FNDA:0,System.Void WaitToken::.ctor(System.Int64)
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
 FN:20,System.Void WaitToken::.ctor(System.Int64,System.DateTimeOffset)
-FNDA:2,System.Void WaitToken::.ctor(System.Int64,System.DateTimeOffset)
-DA:21,2
-DA:22,2
-DA:23,2
-DA:24,2
-DA:25,2
+FNDA:0,System.Void WaitToken::.ctor(System.Int64,System.DateTimeOffset)
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
 FN:7,System.Void WaitToken::.cctor()
-FNDA:1,System.Void WaitToken::.cctor()
-DA:8,1
-DA:10,1
+FNDA:0,System.Void WaitToken::.cctor()
+DA:8,0
+DA:10,0
 LF:45
-LH:40
+LH:0
 BRF:6
-BRH:5
+BRH:0
 FNF:7
-FNH:7
+FNH:0
 end_of_record
