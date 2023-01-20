@@ -7,9 +7,9 @@ var app = builder.Build();
 Task.Run(() => AuctionManager.Start());
 Console.WriteLine("Auction Manager Started!");
 
-app.MapGet("/backend-resource", ([FromHeader(Name = "X-Access-Token")] string token) =>
+app.MapGet("/backend-resource", ([FromHeader(Name = "X-Access-Token")] string? token) =>
 {
-    if (token.Length == 0)
+    if (token == null)
     {
         return Results.Redirect("/queue");
     }
@@ -29,11 +29,11 @@ app.MapGet("/backend-resource", ([FromHeader(Name = "X-Access-Token")] string to
 });
 
 
-app.MapGet("/queue", ([FromHeader(Name = "X-Queue-Token")] string tokenStr) =>
+app.MapGet("/queue", ([FromHeader(Name = "X-Queue-Token")] string? tokenStr) =>
 {
     try
     {
-        if (tokenStr.Length == 0)
+        if (tokenStr == null)
         {
             return AuctionManager.EnterNew();
         }
