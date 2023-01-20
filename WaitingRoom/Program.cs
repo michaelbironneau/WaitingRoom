@@ -1,13 +1,15 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+const string port = "8080";
 
 Task.Run(() => AuctionManager.Start());
-Console.WriteLine("Auction Manager Started!");
+app.Logger.LogInformation("Auction Manager Started!");
 
-app.MapGet("/backend-resource", ([FromHeader(Name = "X-Access-Token")] string? token) =>
+app.MapGet("/backend-resource", (ILogger<Program> logger, [FromHeader(Name = "X-Access-Token")] string? token) =>
 {
     if (token == null)
     {
@@ -22,14 +24,14 @@ app.MapGet("/backend-resource", ([FromHeader(Name = "X-Access-Token")] string? t
         }
         catch (InvalidTokenException ex)
         {
-            Console.WriteLine(ex.ToString());
+            logger.LogWarning(ex.ToString());
             return Results.BadRequest("Invalid Access Token");
         }
     }
 });
 
 
-app.MapGet("/queue", ([FromHeader(Name = "X-Queue-Token")] string? tokenStr) =>
+app.MapGet("/queue", (ILogger<Program> logger, [FromHeader(Name = "X-Queue-Token")] string? tokenStr) =>
 {
     try
     {
@@ -42,10 +44,10 @@ app.MapGet("/queue", ([FromHeader(Name = "X-Queue-Token")] string? tokenStr) =>
     }
     catch (InvalidTokenException ex)
     {
-        Console.WriteLine(ex.ToString());
+        logger.LogWarning(ex.ToString());
         return Results.BadRequest("Invalid Wait Token Signature");
     }
 });
 
-Console.WriteLine("Server listening on port 8080");
-app.Run("http://localhost:8080");
+app.Logger.LogInformation($"Server listening on port {port}");
+app.Run($"http://localhost:{port}");

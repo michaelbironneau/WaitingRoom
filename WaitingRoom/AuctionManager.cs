@@ -23,7 +23,6 @@ public sealed class AuctionManager
             if (instance == null)
             {
                 instance = new AuctionManager();
-                Console.WriteLine("Initialized Auction Manager");
             }
         }
     }
