@@ -1,3 +1,5 @@
+![run tests workflow](https://github.com/github/docs/actions/workflows/test.yml/badge.svg)
+
 # Waiting Room Prototype
 
 Disclaimer: I'm not a C# programmer and this is in part an excuse for me to learn the language beyond some Unity scripting. Please excuse any strange, non-idiomatic code. If it's bad enough to bother you, please open an issue!
