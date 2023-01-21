@@ -12,10 +12,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Run WaitingRoom tests
-        uses: zyborg/dotnet-tests-report@v1
-        with:
-          project_path: ../WaitingRoom.Tests
-          report_name: waiting_room_tests
-          report_title: Waiting Room Tests
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v3
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v
+      with:
+        dotnet-version: '7.0.x'
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build
+    - name: Test with the dotnet CLI
+      run: dotnet test
