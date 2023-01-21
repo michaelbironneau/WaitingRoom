@@ -1,4 +1,4 @@
-![run tests workflow](https://github.com/github/docs/actions/workflows/test.yml/badge.svg)
+![run tests workflow](https://github.com/michaelbironneau/WaitingRoom/actions/workflows/test.yml/badge.svg)
 
 # Waiting Room Prototype
 
