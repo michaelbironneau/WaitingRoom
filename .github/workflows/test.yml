@@ -1,0 +1,11 @@
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run WaitingRoom tests
+        uses: zyborg/dotnet-tests-report@v1
+        with:
+          project_path: WaitingRoom.Tests
+          report_name: waiting_room_tests
+          report_title: Waiting Room Tests
+          github_token: ${{ secrets.GITHUB_TOKEN }}
